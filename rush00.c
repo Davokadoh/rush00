@@ -12,19 +12,19 @@ void rush00(int x_max, int y_max)
   x_max += 2;
   y_max += 2;
   x = y = 0;
-  while(y++, y < y_max)
+  while(y++, y < y_max + 1)
   {
-    while(x++, x < x_max)
+    while(x++, x < x_max + 1)
     {
       if ((x == 1 && y == 1) || (x == x_max && y == y_max))
       {
         put_char("/");
       }
-      if ((x == 1 && y == y_max) || (x == x_max && y == 1))
+      else if ((x == 1 && y == y_max) || (x == x_max && y == 1))
       {
         put_char("B");
       }
-      if ((x == 1 && y != y_max) || (x != x_max && y == 1))
+      else if (((x == 1 || x == x_max) && y < y_max && y > 1) || (x < x_max && x > 1 && y == 1))
       {
         put_char("*");
       }
